@@ -1,4 +1,4 @@
-package ca.ualberta.cs.lonelytwitter;
+package ca.ualberta.cs.mmooneyHabitTracker;
 
 import android.app.Activity;
 import android.content.Intent;

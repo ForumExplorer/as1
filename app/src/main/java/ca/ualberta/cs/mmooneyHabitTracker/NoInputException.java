@@ -1,4 +1,4 @@
-package ca.ualberta.cs.lonelytwitter;
+package ca.ualberta.cs.mmooneyHabitTracker;
 
 /**
  * Created by mmooney on 10/3/16.

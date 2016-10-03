@@ -1,6 +1,5 @@
-package ca.ualberta.cs.lonelytwitter;
+package ca.ualberta.cs.mmooneyHabitTracker;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -33,7 +32,9 @@ import java.util.Date;
             this.due = due;
         }
 
-
+        public String toString (){
+            return  getDescription();
+        }
         public String getDescription() {
             return description;
         }

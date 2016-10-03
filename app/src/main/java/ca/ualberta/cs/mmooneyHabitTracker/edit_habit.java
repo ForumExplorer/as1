@@ -1,17 +1,14 @@
-package ca.ualberta.cs.lonelytwitter;
+package ca.ualberta.cs.mmooneyHabitTracker;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -23,15 +20,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Date;
+
 /*
 displays all of the habits in a single list.
 You select the number of the habit in order to view more details.
  */
-public class edit_habit extends add_habit {
+public class edit_habit extends Activity {
     private static final String FILENAME = "file.sav";
     private EditText Hnumber;
     private String Hdescription;
+    private ArrayList<Habit> habitList;
     public int habit_number;
     private Button habit_View;
 
@@ -43,6 +41,7 @@ public class edit_habit extends add_habit {
         habit_View.setOnClickListener(new View.OnClickListener(){
             public void onClick (View v){
                 Intent Eswitch = new Intent(edit_habit.this, view_habit.class);
+                startActivity(Eswitch);
             }
 
         });
@@ -51,7 +50,7 @@ public class edit_habit extends add_habit {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        loadFromFile();
+        habitList = loadFromFile();
         setContentView(R.layout.edit_habit);
         final ListView my_habits =(ListView) findViewById(R.id.myHabits);
         ArrayAdapter<Habit> adapter = new ArrayAdapter<Habit>(this,
@@ -85,8 +84,8 @@ public class edit_habit extends add_habit {
 
         return super.onOptionsItemSelected(item);
     }
-    private void loadFromFile() {
-        ArrayList<String> tweets = new ArrayList<String>();
+    private ArrayList<Habit> loadFromFile() {
+        ArrayList<Habit> habitList = new ArrayList<Habit>();
         try {
             FileInputStream fis = openFileInput(FILENAME);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
@@ -94,6 +93,7 @@ public class edit_habit extends add_habit {
             //code taken from http://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylistt on September 22nd 2016
             Type listType = new TypeToken<ArrayList<Habit>>(){}.getType();
             habitList = gson.fromJson(in, listType);
+            return habitList;
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block

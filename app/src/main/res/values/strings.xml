@@ -2,7 +2,7 @@
 <resources>
 
     <string name="hello">Joshua said:</string>
-    <string name="app_name">LonelyTwitter</string>
+    <string name="app_name">mmooney-HabitTracker</string>
     <string name="save">Save</string>
     <string name="clear">Clear</string>
     <string name="title_activity_add_habit">add_habit</string>

@@ -1,11 +1,10 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 18
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        applicationId "ca.ualberta.cs.lonelytwitter"
+        applicationId "ca.ualberta.cs.mmooneyHabitTracker"
         minSdkVersion 18
         targetSdkVersion 18
         compileOptions {
@@ -20,4 +19,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+}
+
+dependencies {
+    compile 'com.google.code.gson:gson:2.7'
 }

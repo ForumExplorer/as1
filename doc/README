@@ -1,0 +1,11 @@
+This app is known as Habit Tracker. It is supposed to take in a habit
+record it, and then track how many times you successfully complete said habit.
+You can set what days the habit is due, though that is just a visual reminder,
+as you can complete a habit on any day. You can also clear all completions
+if you want a fresh start on the habit.
+
+Collabertation:
+Student Picker videos found at https://www.youtube.com/watch?v=5PPD0ncJU1g&feature=youtu.be
+Adding a second activity: https://www.youtube.com/watch?v=KhSM_CRCLRo
+Starting a new activity from a button: https://www.youtube.com/watch?v=6qo_Opqjhew
+
